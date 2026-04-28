@@ -1,0 +1,217 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Senac RJ</title>
+
+
+    <!--CSS-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/geral.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/tailwind.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <script src="js/modernizr-2.6.2.js"></script>
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="js/api.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-136426955-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136426955-1');
+    </script>
+
+</head>
+<body>
+    <div id="loading" style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(0,0,0,.3);z-index:9999">
+        <div id="img-gif" style="position:absolute; width: 100px; height: 100px; top: 50%; left: 50%; opacity: 1;">
+            <img src="images/loader.gif">
+        </div>
+    </div>
+    <header>
+        <div class="mainheader">
+            <div class="container">
+                <div class="col-sm-3">
+                    <h1 class="logo">
+                        <a href="#/" rel="home">Senac</a>
+                    </h1>
+                    <p id="versao">1.0.0</p>
+                </div>
+                <div class="col-sm-6 text-center">
+                </div>
+                <div class="col-sm-3 hidden-xs hidden-sm">
+                    <nav class="social">
+                        <a href="https://www.facebook.com/SenacRiodeJaneiro/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com/senac_rj" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/school/10170931?pathWildcard=10170931" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/senacrj/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        <a href="https://www.instagram.com/Senac_RJ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="subheader">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="border: 1px solid green; height: 10px;">
+
+                <!--Menu-->
+                
+
+            </nav>
+        </div>
+    </header>
+
+    <div style="background-color: white;">
+        
+
+
+<form action="/Diploma/Resultado?Length=7" data-ajax="true" data-ajax-loading="#loading" data-ajax-method="POST" data-ajax-mode="replace" data-ajax-update="#divConsulta" id="frmDiploma" method="post"><input name="__RequestVerificationToken" type="hidden" value="aG2ylV6r-9jItK5KUqaCI-ohlvrzzISOqOTFfZZ-zRTJRo-Nl_V_RFztXWfj1AFBaQnlFBNgWeJ6qGmvVS1fvUJoTGhfslq3aoss88ElC-Q1">    <div class="container" id="divPrincipal">
+
+        <legend class="legend-title">Autenticação de Diplomas e Certificados</legend>
+
+        <div class="explicao" style="text-align: justify;">
+            <p class="text-justify">Para verificar a autenticidade do seu Diploma ou Certificado, informe abaixo os seguinte dados: <b>Primeiro nome do aluno</b>, <b>Data de nascimento</b> e o <b>Número do formulário</b>.</p>
+            
+        </div>
+        <br>
+        <span><b>*  Somente documentos expedidos a partir de Maio de 2016</b></span>
+
+        <div class="container" style="margin-top:30px;" id="divFormulario">
+            <div class="row">
+                <div class=" col-md-6 shadow-md" style="padding:45px 20px 30px 22px">
+
+                    
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+                            <input type="text" id="PrimeiroNome" name="PrimeiroNome" class="form-control" placeholder="Primeiro Nome" required="">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+                            <input type="text" id="DataNascimento" name="DataNascimento" class="form-control" placeholder="Data de Nascimento (DIA/MES/ANO)" required="">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-list-alt"></span></span>
+                            <input type="number" id="NumeroFormulario" name="NumeroFormulario" class="form-control" placeholder="Número do Formulário" required="">
+                        </div>
+
+                        <div class="g-recaptcha" data-theme="light" data-sitekey="6LctoXIUAAAAAAW8a6HlDmkGX0V6ExUMhS7SoH3L"></div>
+
+                        <div class="input-group">
+                            <button type="submit" id="bttConsultarDiploma" class="btn btn-labeled btn-info pull-right bttConsultarDiploma" style="background-color: #004587;">
+                                <span class="btn-label"><i class="glyphicon glyphicon-search"></i></span>Pesquisar
+                            </button>
+                        </div>
+                    
+
+                </div>
+                <div class=" col-md-1"></div>
+
+                <div id="divCertificado" class="col-md-5 shadow-md" style="padding:0">
+                    <img id="imgCertificado" class="img-responsive" src="images/diploma4_1302.png">
+                </div>
+
+                <div id="divConsulta" class="col-md-5 shadow-md">
+                    
+                </div>
+
+            </div>
+        </div>
+    </div></form>
+<div id="loading" style="position:absolute;top:0;left:0;width:100%;height:100%;background-color: rgba(0,0,0,.3);z-index:9999" class="modal">
+    <div id="img-gif" style="position:relative; width: 100px; height: 100px; top: 50%; left: 50%; margin-left:-40px; margin-top:-40px;opacity: 1;">
+        <img src="images/loader.gif">
+    </div>
+</div>
+    </div>
+
+    <footer>
+        <div class="linha copy">
+            <div class="container hidden-xs hidden-sm">
+                <span class="logo-footer-desk "><img src="images/senac_logo_branco.png" alt="Senac"> © Todos os Direitos Reservados - 2025.</span>
+                <span class="logo-footer-desk" style="margin-left:10%"> FALE COM A GENTE 21 4020-2101</span>
+                <nav class="social">
+                    <a href="https://www.facebook.com/SenacRiodeJaneiro/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/senac_rj" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/school/10170931?pathWildcard=10170931" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/senacrj/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/Senac_RJ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+            <div class="container hidden-md hidden-lg mobfoot">
+                <span class="logo-footer-desk "><img src="images/senac_logo_branco.png" alt="Senac"> © Todos os Direitos Reservados - 2025.</span>
+                <span class="logo-footer-desk" style="margin-left:10%"> FALE COM A GENTE 21 4020-2101</span>
+                <nav class="social">
+                    <a href="https://www.facebook.com/SenacRiodeJaneiro/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="https://twitter.com/senac_rj" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://www.linkedin.com/school/10170931?pathWildcard=10170931" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="https://www.youtube.com/senacrj/" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    <a href="https://www.instagram.com/Senac_RJ/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.unobtrusive-ajax.js"></script>
+    <script src="js/imask.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#imgCertificado").effect("bounce");
+            $("#PrimeiroNome").focus();
+
+            $("#DataNascimento").focus(function () {
+                var dateMask = new IMask(
+                    document.getElementById('DataNascimento'),
+                    {
+                        mask: '00/00/0000',
+                        min: new Date(1900, 0, 1),
+                        max: new Date(2050, 0, 1),
+                        lazy: true
+                    });
+            });
+        });
+
+        window.onload = function () {
+            var recaptcha = document.forms["frmDiploma"]["g-recaptcha-response"];
+            recaptcha.required = true;
+            recaptcha.oninvalid = function (e) {
+                $('#modalDiploma').modal('show');
+            }
+        }
+
+        // detect enter keypress
+        $(document).keypress(function (e) {
+            var keycode = (e.keyCode ? e.keyCode : e.which);
+            if (keycode == '13') {
+                $("#bttConsultarDiploma").click();
+            }
+        });
+
+        $("#frmDiplomaFac").submit(function (e) {
+            $("#loading").show();
+        });
+    </script>
+
+    <div id="modalDiploma" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">�</button>
+                    <h4 class="modal-title">Senac RJ</h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body></html>
